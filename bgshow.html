@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> BG Show Local Storage </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html 
+        {
+                   display: table;
+                   margin: auto;
+        }
+
+        body 
+        {
+                    
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 900px;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    font-size: medium;
+                    font-weight: 600;
+                    background-color: #bfc0c0;
+        }
+
+        #here
+        {
+            border: 2px solid yellow;
+            background-color: aliceblue;
+            width: 900px;
+            height: 900px;
+        }
+
+    </style>
+
+
+    </head>
+    <body onload="fn_getData()" id="body_bg">
+        <div class="container-fluid p-4 bg-primary text-white text-center">
+            <h1>Journey That Inspire</h1>
+            <p>“Work hard in silence, let your success be your noise.”</p> 
+            
+        </div>
+
+        <br>
+        <br>
+        <p id="write"> </p>
+        <br>
+        
+        <p id="for_bg"> </p>
+        <div id="here">
+            <h5> You can Start Writing from here..................</h5>
+        </div>
+        <div>
+            <h3> Want to delet your data</h3>
+            <br>
+            <button type="button" onclick="fn_deleteData()">Click here to Delete User Data</button>
+        </div>
+        <p id="delet"></p>
+        <br>
+        <a href="bgcolour.html" > Click here to Go to home page</a>
+        
+
+        <script>
+             function fn_getData()
+             
+            { 
+                
+
+                    // 1.  Reading data from localStorage						
+                    var   str  =   localStorage.getItem("userData");
+                //	alert(str);
+                                    
+                // 2.  Access html elements to display user data
+                    var  paraObj = document.getElementById("write");
+                
+                if(  str ==  null )
+                {
+                        alert("There is no user data in localStorage");
+                        paraObj.innerText = "";
+                        return;   //  exit from the function 
+                }
+                                        
+                    // 3.  Convert JSON string into object							
+                        var  userObj  =  JSON.parse(str);
+                    
+                    // 4.  Show user details
+                    paraObj.innerText =  " Welcome  " + userObj.name + ",   " + "Date of Joinig:  " + userObj.date;
+
+                    if(userObj.color == null)
+                    { 
+                        document.getElementById("body_bg").style.backgroundColor = black;
+                        document.getElementById("for_bg").innerText=" No Colour Choosen Default Black";
+                        return;
+                    }
+
+                    document.getElementById("body_bg").style.backgroundColor = userObj.color;
+
+                    
+
+            }	
+
+            function   fn_deleteData()
+            {
+                    // delete an item from localStorage
+                    localStorage.removeItem("userData");
+                    
+                    
+                    alert("User details are removed from localStorage");
+                    document.getElementById("delet").innerText="Please go to Home page in order to Enter data again";
+
+            }
+        </script>
+</body>
+</html>
