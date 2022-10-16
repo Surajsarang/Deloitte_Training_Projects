@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Table JavaScript
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+
+            display: table-cell;
+            vertical-align: middle;
+            width: 900px;
+            font-size: medium;
+            font-weight: 500;
+            background-color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid p-3 bg-secondary text-white text-center">
+        <h1>JAVA SCRIPT TABLE ASSIGNMENT</h1>
+        <p>ADVANCED FRONTEND DEVELOPMENT</p>
+        <p> Presented By: Suraj Kumar</p>
+    </div>
+    <h4> OPERATION ON ARRAY IN JAVASCRIPT</h4>
+    <button type="button" onclick="get_table()"> CLICK HERE TO KNOW MORE</button>
+    <p id="table_pre"> </p>
+
+
+    <script>
+        function get_table() {
+            var name = new Array();
+            name.push(["Serial No.", "Tecnology Name"]);
+            name.push(["1", "HTML 5"]);
+            name.push(["2", "JAVA SCRIPT"]);
+            name.push(["3", "ANGULAR JS"]);
+            name.push(["4", "CSS 3"]);
+            name.push(["5", "SASS AND LESS"]);
+
+
+            const new_table = document.createElement("table");
+
+            const table_body = document.createElement("tbody");
+
+            for (var i = 0; i <= 5; i++) {
+                const row = document.createElement("tr");
+
+                for (var j = 0; j < 2; j++) {
+                    const col = document.createElement("td");
+                    const col_item = document.createTextNode(name[i][j]);
+
+
+                    col.appendChild(col_item);
+                    row.appendChild(col);
+                }
+
+                table_body.appendChild(row);
+
+            }
+
+            new_table.appendChild(table_body);
+
+            document.body.appendChild(new_table);
+
+            new_table.setAttribute("border", "4");
+            new_table.setAttribute("width", "300px");
+            new_table.setAttribute("height", "200px");
+
+
+            document.getElementById("table_pre") = new_table;
+
+        } 
+
+
+        function get_table_dynamic() {
+            var name = new Array();
+            name.push(["Tecnology Name", "Tecnology Name", "Tecnology Name", "Tecnology Name"]);
+            name.push(["HTML 5", "JAVA SCRIPT", "ANGULAR JS","CSS 3"]);
+            name.push(["HTML 5", "JAVA SCRIPT", "ANGULAR JS","CSS 3" ]);
+            name.push(["HTML 5", "JAVA SCRIPT", "ANGULAR JS","CSS 3"]);
+            name.push(["HTML 5", "JAVA SCRIPT", "ANGULAR JS","CSS 3"]);
+            name.push(["HTML 5", "JAVA SCRIPT", "","" ]);
+           
+
+
+            const new_table = document.createElement("table");
+
+            const table_body = document.createElement("tbody");
+
+            for (var i = 0; i <= 5; i++) {
+                const row = document.createElement("tr");
+
+                for (var j = 0; j < 4; j++) {
+                    const col = document.createElement("td");
+                    const col_item = document.createTextNode(name[i][j]);
+
+
+                    col.appendChild(col_item);
+                    row.appendChild(col);
+                }
+
+                table_body.appendChild(row);
+
+            }
+
+            new_table.appendChild(table_body);
+
+            document.body.appendChild(new_table);
+
+            new_table.setAttribute("border", "4");
+            new_table.setAttribute("width", "800px");
+            new_table.setAttribute("height", "200px");
+
+
+            document.getElementById("table_pre") = new_table;
+        }
+        
+    </script>
+
+<h4> DYNAMIC OPERATION ON ARRAY IN JAVASCRIPT</h4>
+<button type="button" onclick="get_table_dynamic()"> CLICK HERE TO KNOW MORE</button>
+<br>
+<br>
+<br>
+
+</body>
+
+</html>

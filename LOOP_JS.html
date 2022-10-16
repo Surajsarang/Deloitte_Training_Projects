@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+
+            display: table-cell;
+            vertical-align: middle;
+            width: 900px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: medium;
+            font-weight: 500;
+            background-color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid p-3 bg-warning text-white text-center">
+        <h1>JAVA SCRIPT LOOPING</h1>
+        <p>ADVANCED FRONTEND DEVELOPMENT</p>
+        <p> Presented By: Suraj Kumar</p>
+    </div>
+    <BR>
+    <BR>
+
+    <input type="button" onclick="looping()" value="ON CLICK">
+
+    <br>
+    <br>
+    <p>Looping will start here</p>
+    <ul id="loop">
+        <li></li>
+    </ul>
+
+
+    <p>Color list </p>
+    <input type="button" onclick="colour()" value="ON CLICK">
+    <ul id="co">
+        <li></li>
+    </ul>
+    <script>
+
+        function looping() {
+            var loopobj = document.getElementById("loop");
+            var str = "";
+
+            for (var i = 1; i <= 10; i++) {
+                str += "<li>" + "WELCOME TO JAVASCRIPT - " + i + "</li>" + "<br><br>";
+            }
+
+            loopobj.innerHTML = str;
+        }
+
+
+
+
+        function colour() {
+
+            var str = "";
+            var loopobj1 = document.getElementById("co");
+
+            for (var i = 1; i <= 10; i++) {
+
+                if (i%2 == 0) {
+                
+                    
+                    str += "<li style='color:red'>" + "WELCOME TO JAVASCRIPT - " + i + "</li>" + "<br><br>";
+                    
+                }
+                
+
+                else {
+                    
+                    str += "<li style='color:green'>" + "WELCOME TO JAVASCRIPT - " + i + "</li>" + "<br><br>";
+                    
+                
+                }
+            }
+            loopobj1.innerHTML = str;
+        }
+    </script>
+
+
+</body>
+
+</html>
