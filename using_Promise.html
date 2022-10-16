@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Employee JavaScript
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+
+            display: table-cell;
+            vertical-align: middle;
+            width: 1000px;
+            font-size: medium;
+            font-weight: 500;
+            background-color: azure;
+        }
+
+        .container-fluid {
+            background-color: rgb(231, 162, 33);
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Generating Random Number using Promise JS</h1>
+        <p>ADVANCED FRONTEND DEVELOPMENT</p>
+        <p> Presented By: Suraj Kumar</p>
+    </div>
+    <br>
+    <br>
+
+    <h4>Click the button to generate random number between 1 to 50</h4>
+    <br>
+    <button type="button" id="no" onclick="generate()">Generate Number</button>
+    <br>
+    <br>
+    <br>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+    <script>
+
+        function generate() {
+            var num = Math.floor(Math.random() * 100) + 1;
+            document.getElementById("demo").innerHTML = "The Generated no. is = " + num;
+
+
+            const myPromise = new Promise((resolve, reject) => {
+
+                if (num % 5 == 0) {
+                    resolve(num);
+                }
+                else {
+                    reject("Error Message <br> Not a multiple of 5");
+                }
+            });
+
+
+            myPromise.then((response) => {
+                document.getElementById("demo1").innerHTML = response + "  is a multiple of 5";
+            })
+                .catch((errorResponse) => {
+                    document.getElementById("demo1").innerHTML = errorResponse;
+                });
+
+        }
+    </script>
+</body>
+
+</html>

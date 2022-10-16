@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Employee JavaScript
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+
+            display: table-cell;
+            vertical-align: middle;
+            width: 1000px;
+            font-size: medium;
+            font-weight: 500;
+            background-color: azure;
+        }
+
+        .container-fluid {
+            background-color: rgb(231, 162, 33);
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Geting data from URL by using JS</h1>
+        <p>ADVANCED FRONTEND DEVELOPMENT</p>
+        <p> Presented By: Suraj Kumar</p>
+    </div>
+    <br>
+    
+    <h3> Click the dwon button to generate data from Given url</h3>
+    <br>
+    
+    <button type="button" id="url" onclick="getURL()">Show Data</button>
+    <br>
+    <br>
+    <p id="demo1"></p>
+    <p id="demo"></p>
+
+    <script>
+        function getURL() {
+            
+            let fetchRes = fetch("https://reqres.in/api/users");
+            
+            fetchRes.then(
+                res => res.json()).then(d => {
+
+                    document.getElementById("demo1").innerHTML = "Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last Name";
+                    for( var i=0; i<d.data.length; i++)
+                    {  
+                        var str;
+                        str += `<br>${d.data[i].id} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${d.data[i].email}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${d.data[i].first_name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${d.data[i].last_name}<br>`;
+                    }
+                
+                document.getElementById("demo").innerHTML=str;
+                });
+        }  
+    </script>
+
+</body>
+
+</html>

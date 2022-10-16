@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Employee JavaScript
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+
+            display: table-cell;
+            vertical-align: middle;
+            width: 1000px;
+            font-size: medium;
+            font-weight: 500;
+            background-color: azure;
+        }
+
+        .container-fluid {
+            background-color: rgb(231, 162, 33);
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .btn {
+            background-color: DodgerBlue;
+            border: none;
+            color: white;
+            padding: 12px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #move {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Geting data from URL by using JS</h1>
+        <p>ADVANCED FRONTEND DEVELOPMENT</p>
+        <p> Presented By: Suraj Kumar</p>
+    </div>
+
+    <h3 style="text-align:center;">IMAGE SLIDE SHOW </h3>
+    <hr />
+    <div id="move">
+        <button class="btn" id="startbtn" onclick="fn_start()"><i class="fa fa-play"></i> PLAY</button>
+        <button class="btn" id="stopbtn" onclick="fn_stop()"><i class="fa fa-pause"></i> PAUSE</button>
+    </div>
+    <hr />
+    <!-- <h1  id="head1">Image1.jpg</h1> -->
+    <img src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=600"
+        id="img1" border="2" width="100%" height="400" />
+
+
+    <script>
+        var count = 0;   // global variable
+        var imagesArray = ["https://images.pexels.com/photos/1671324/pexels-photo-1671324.jpeg?auto=compress&cs=tinysrgb&w=600", "https://images.pexels.com/photos/592284/pexels-photo-592284.jpeg?auto=compress&cs=tinysrgb&w=600", "https://images.pexels.com/photos/707344/pexels-photo-707344.jpeg?auto=compress&cs=tinysrgb&w=600", "https://images.pexels.com/photos/977738/pexels-photo-977738.jpeg?auto=compress&cs=tinysrgb&w=600", "https://images.pexels.com/photos/7294/garden.jpg?auto=compress&cs=tinysrgb&w=600"];
+
+
+        function fn_start() {
+            var myint = setInterval(fn_nextItem, 1000);
+        }
+
+
+        function showData() {
+
+            var imgObj = document.getElementById("img1");
+
+            imgObj.src = imagesArray[count];
+        }
+
+        function fn_nextItem() {
+            count++;
+
+            if (count > imagesArray.length - 1) {
+                count = 0;
+            }
+
+            showData();
+        }
+
+        function fn_stop() {
+            clearInterval(myint);
+        }
+
+        document.getElementById("startBtn").addEventListener("click", fn_start);
+    document.getElementById("stopBtn").addEventListener("click", fn_stop);
+
+    </script>
+
+
+
+</body>
+
+</html>
