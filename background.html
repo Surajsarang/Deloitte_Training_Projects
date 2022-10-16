@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="english">
+    <head>
+        <title> Colur Change</title>
+    </head>
+
+    <body>
+        <h2> Changing Backgroundcolur by using Local Storage</h2>
+        <!--<form >
+            <label for="colour">Choose a colour:</label>
+            <select name="colour" id="colour">
+              <option value="volvo">blue</option>
+              <option value="saab">red</option>
+              <option value="opel">yellow</option>
+              <option value="audi">black</option>
+              <option value="opel">pink</option>
+              <option value="audi">brwon</option>
+              <option value="opel">grey</option>
+              <option value="audi">blue</option>
+            </select>
+          </form>-->
+            <br><br>
+            
+            <input type="color" id="colorID" oninput="changeColor()">
+          
+
+          
+
+           <script>
+
+                function changeColor() 
+                { 
+                var userColor = document.getElementById('colorID').value;
+                localStorage.setItem('storedValue', document.body.style.backgroundColor = userColor);
+                }
+
+                
+               /* if(localStorage.storedValue!= null) 
+                {
+                document.getElementById('colorID').value = localStorage.storedValue;
+                document.body.style.backgroundColor      = localStorage.storedValue;
+                }*/
+          </script>
+    </body>
+</html>

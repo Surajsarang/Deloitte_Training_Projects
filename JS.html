@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="English">
+
+<head>
+    <title> JS in HTML</title>
+    <style>
+        div.st{
+            border: 3px;
+            border-style: solid;
+            border-color: black;
+            background-color: aqua;
+            padding-top: 10px;
+            padding-left: 5px;
+            width: 400px;
+
+        }
+    </style>
+</head>
+
+<body>
+ <h3> Bill Calculation </h3>
+ <h5> Enter Details of the Product</h5>
+ <br>
+ <div class="st">
+    <label> Product Name: </label>
+    <input type="text" name="ProName" id="PN">
+    <br>
+    <br>
+    <label> Unit Prize: </label>
+    <input type="text" name="UnPr" id="UP">
+    <br>
+    <br>
+    <label> Quantity: </label>
+    <input type="text" name="Qtt" id="Qt">
+    <br>
+    <br>
+    <input type="button" value="Get Total"  onclick="Bill_Calculation()">
+    <br>
+    <br>
+    <p id="output"> </p>
+ </div>
+ <div class="st">
+ <script>
+    function Bill_Calculation()
+    {
+      var q = document.getElementById("Qt").value;
+      var u = document.getElementById("UP").value;
+      var n = document.getElementById("PN").value;
+    
+      var a = q*u;
+
+      document.getElementById("output").innerHTML= "Product Choosen = " + n +'<br> <br>' +  "Total Amount =" + a;
+      
+	      
+    }
+ </script>
+ </div>
+
+</body>
+</html>
