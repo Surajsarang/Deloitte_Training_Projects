@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> Score Board</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    html {
+      display: table;
+      margin: auto;
+    }
+
+    body {
+
+      display: table-cell;
+      vertical-align: middle;
+      width: 1200px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: medium;
+      font-weight: 600;
+      background-image: url("bg.jpg");
+      background-repeat: no-repeat;
+      background-size: 1200px 833px;
+    }
+
+    #icon {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      border-radius: 50%;
+    }
+
+    #win {
+      background-color: green;
+      padding: 3px;
+      border-radius: 20%;
+
+    }
+
+    #draw {
+      background-color: grey;
+      padding: 4px;
+      border-radius: 20%;
+
+    }
+
+    #lost {
+      background-color: rgb(234, 40, 10);
+      padding: 4px;
+      border-radius: 20%;
+
+    }
+
+    .table {
+      background-image: linear-gradient(to bottom right, rgb(196, 196, 251), rgb(228, 221, 122));
+      opacity: 0.75;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .container-fluid {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      word-spacing: 2px;
+      letter-spacing: 1px;
+    }
+
+    #top {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+    }
+
+    .foot {
+      background-image: linear-gradient(to right, rgb(253, 8, 8), #e73895);
+      opacity: 0.9;
+    }
+
+    .head {
+      background-image: linear-gradient(to right, blue, rgb(232, 232, 44));
+    }
+  </style>
+</head>
+
+<body>
+  <header class="head">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2 text-center pt-4">
+          <img id="top" src="MIlogo.png">
+        </div>
+        <div class="col-8">
+          <div class="container-fluid p-1  text-white text-center">
+            <h1>POINT TABLE</h1>
+            <h4>INDIAN PREMIER LEAGUE</h4>
+            <p>MI&nbsp; VS&nbsp; CSK </p>
+            <p>TODAY | 7:30 PM | FIROZ SHAH KOTLA DELHI</p>
+          </div>
+
+        </div>
+        <div class="col-2 text-center pt-4">
+          <img id="top" src="CSKlogo.png">
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <br>
+
+  <div class="row">
+    <div class="col-sm-2">
+      <img src="MI.jpg" width="179.7" height="613">
+    </div>
+    <div class="col-sm-8">
+      <div>
+        <table class="table table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th></th>
+              <th>TEAMS</th>
+              <th>M</th>
+              <th>W</th>
+              <th>L</th>
+              <th>T</th>
+              <th>D</th>
+              <th>N/R</th>
+              <th>PT</th>
+              <th>Last 5 Matches</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&nbsp;&nbsp;<img id=icon src="CSKlogo.png"> </td>
+              <td>CSK</td>
+              <td>13</td>
+              <td>8</td>
+              <td>0</td>
+              <td>0</td>
+              <td>5</td>
+              <td>0</td>
+              <td>247</td>
+              <td><span id="win">W</span>&nbsp;<span id="draw">D</span>&nbsp;<span id="win">W</span>&nbsp;<span
+                  id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;<img id=icon src="MIlogo.png"></td>
+              <td>MI</td>
+              <td>13</td>
+              <td>9</td>
+              <td>3</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>220</td>
+              <td><span id="lost">L</span>&nbsp;<span id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;<span
+                  id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;<img id=icon src="DClogo.png"></td>
+              <td>DC</td>
+              <td>13</td>
+              <td>6</td>
+              <td>1</td>
+              <td>0</td>
+              <td>6</td>
+              <td>0</td>
+              <td>201</td>
+              <td><span id="win">W</span>&nbsp;<span id="draw">D</span>&nbsp;<span id="win">W</span>&nbsp;<span
+                  id="win">W</span>&nbsp;<span id="draw">D</span>&nbsp;<span id="win">W</span>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;<img id=icon src="GTlogo.jpg"></td>
+              <td>GT</td>
+              <td>13</td>
+              <td>6</td>
+              <td>3</td>
+              <td>0</td>
+              <td>4</td>
+              <td>0</td>
+              <td>181</td>
+              <td><span id="lost">L</span>&nbsp;<span id="draw">D</span>&nbsp;<span id="win">W</span>&nbsp;<span
+                  id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;<img id=icon src="LSGlogo.png"></td>
+              <td>LSG</td>
+              <td>13</td>
+              <td>2</td>
+              <td>4</td>
+              <td>0</td>
+              <td>7</td>
+              <td>0</td>
+              <td>151</td>
+              <td><span id="win">W</span>&nbsp;<span id="draw">D</span>&nbsp;<span id="win">W</span>&nbsp;<span
+                  id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;<img id=icon src="SRHlogo.png"></td>
+              <td>SRH</td>
+              <td>13</td>
+              <td>3</td>
+              <td>5</td>
+              <td>0</td>
+              <td>5</td>
+              <td>0</td>
+              <td>145</td>
+              <td><span id="win">W</span>&nbsp;<span id="draw">D</span>&nbsp;<span id="win">W</span>&nbsp;<span
+                  id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;<img id=icon src="RCB.jpg"></td>
+              <td>RCB</td>
+              <td>13</td>
+              <td>1</td>
+              <td>5</td>
+              <td>0</td>
+              <td>7</td>
+              <td>0</td>
+              <td>135</td>
+              <td><span id="win">W</span>&nbsp;<span id="draw">D</span>&nbsp;<span id="win">W</span>&nbsp;<span
+                  id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;<img id=icon src="KKRlogo.png"></td>
+              <td>KKR</td>
+              <td>13</td>
+              <td>3</td>
+              <td>5</td>
+              <td>0</td>
+              <td>5</td>
+              <td>0</td>
+              <td>134</td>
+              <td><span id="win">W</span>&nbsp;<span id="draw">D</span>&nbsp;<span id="win">W</span>&nbsp;<span
+                  id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;<img id=icon src="KPlogo.png"></td>
+              <td>KXIP</td>
+              <td>13</td>
+              <td>1</td>
+              <td>6</td>
+              <td>0</td>
+              <td>6</td>
+              <td>0</td>
+              <td>120</td>
+              <td><span id="win">W</span>&nbsp;<span id="draw">D</span>&nbsp;<span id="win">W</span>&nbsp;<span
+                  id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;&nbsp;<img id=icon src="RRlogo.png"></td>
+              <td>RR</td>
+              <td>13</td>
+              <td>1</td>
+              <td>8</td>
+              <td>0</td>
+              <td>4</td>
+              <td>0</td>
+              <td>95</td>
+              <td><span id="win">W</span>&nbsp;<span id="draw">D</span>&nbsp;<span id="win">W</span>&nbsp;<span
+                  id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;<span id="win">W</span>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <img src="CSK.jpg" width="179.7" height="613">
+    </div>
+  </div>
+  <footer class="foot">
+    <div class="container-fluid p-4 ">
+      <div class="row">
+        <div class="col-2 text-center pt-3">
+          <img id="top" src="RCB.jpg">
+        </div>
+        <div class="col-8">
+          <div class="container-fluid p-1  text-white text-center">
+            <h1>RCB &nbsp; VS &nbsp; RR</h1>
+            <h4>Indian Premier League</h4>
+
+            <p>Tommorow | 7:30 PM | Rajiv Gandhi Cricket Stadium Hyderabad</p>
+          </div>
+
+        </div>
+        <div class="col-2 text-center pt-3">
+          <img id="top" src="RRlogo.png">
+
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
