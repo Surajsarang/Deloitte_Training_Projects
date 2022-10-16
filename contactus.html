@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+    <link href="Project.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <style> 
+        .hi:hover {
+            background-color: blanchedalmond;
+        }
+
+        html {
+            background-color: white;
+            display: table;
+            margin: auto;
+        }
+
+        body {
+            background-color: #ffffff;
+            width: 1140px;
+        }
+    </style>
+
+    <script>
+        // When the user scrolls down 20px from the top of the document, slide down the navbar
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-50px";
+            }
+        }
+    </script>
+
+
+</head>
+
+<body class="mx-2" style="vertical-align: middle;">
+    <p class="display-2 text-center fw-lighter" style="font-family:ivypresto-display;">Client Inquiry Form</p>
+    <br>
+    <p class="h3 text-center">I'm so excited to know about you!</p>
+    <div class="container p-2">
+        <form   action="" method="get" class="was-validated center"
+            style=" width:800px; margin-left: 157px; box-shadow: 2px 2px 10px black ; border:2px solid black ; border-radius: 3%;">
+            <div class="container px-3  mx-5">
+                <div class="row">
+                    <label class="form-label pb-0 " for="fname">Name</label><br>
+                    <div class="col-5">
+                        <input type="text" name="fname" id="fname" placeholder="First name" class="form-control"
+                            required>
+                    </div>
+                    <div class="col-5">
+                        <input type="text" name="lname" placeholder="Last name" id="lname" class="form-control"
+                            required>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-10">
+                        <label for="" class="form-label">Buisness Name</label>
+                        <input type="text" name="bname" id="bname" class="form-control"
+                            placeholder="Ex: Industrial interior design">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-10">
+                        <label for="" class="form-label">Email</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Username" required>
+                            <span class="input-group-text">@</span>
+                            <input type="text" class="form-control" placeholder="Domain name" required>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <br>
+                <div class="row">
+                    <div class="col-10">
+                        <label for="instaid" class="form-label mt-1  ">@Instagram Id</label>
+                        <input type="text" class="form-control" name="instaid" id="instaid"
+                            placeholder="Ex: Suraj.sarang">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-10">
+                        <label for="Buisness" class="form-label mt-1  ">Tell me more about your Buisness</label>
+                        <textarea class="form-control" name="Buisness" id="Buisness"
+                            placeholder="Tell me a few sentences about your buisness" required></textarea>
+                    </div>
+                </div>
+                <br><br>
+
+                <label for="link" class="form-label">Website </label>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <div class="col-sm-1">
+
+                            <span class="input-group-text" id="basic-addon1">https:</span>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="link" placeholder="Website link">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <br>
+                    <div class="row">
+                        <div class="col-10">
+                            <label for="interested services" class="form-label pb-0 ">What services are you interested
+                                in</label>
+                        </div><br>
+                        <div class="col-4">
+                            <select name="" id="interested services" class="form-select">
+                                <option value="">Brand Design</option>
+                                <option value="">Brand & Website Design</option>
+                                <option value="">Product Photography</option>
+                                <option value="">Brand & Print/Packaging Design</option>
+                                <option value="">Social Media/Email Design</option>
+                                <option value="">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="container row ps-0">
+                        <div class="col-sm-9">
+                            <label for="budget" class="form-label " required>DO YOU HAVE A BUDGET IN MIND FOR THIS
+                                PROJECT? *</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <select name="budget" id="budget" class="form-select">
+                                <option value="">Not sure</option>
+                                <option value="">less than 1000</option>
+                                <option value="">less than 5000</option>
+                                <option value="">5000+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br><br>
+
+                    <label for="dd" class="form-label">DO YOU HAVE A SPECIFIC LAUNCH DATE IN MIND?</label>
+                    <div class="row">
+                        <div class="col-1 ml-0">
+                            <input type="text" name="dd" class="form-label ml-0 w-100 pr-0" id="dd" required>&nbsp;
+                        </div>
+                        <div class="col-1">
+                            <input type="text" name="mm" class="form-label ml-0 w-100" id="mm" required>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" name="yyyy" class="form-label w-75" id="yyyy" required>
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <label for="hear" class="form-label">where did you hear about leigh the studio</label>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <select name="hear" id="hear" class="form-select" required>
+                                <option value="">Choose a platform</option>
+                                <option value="">Google</option>
+                                <option value="">Pintrest</option>
+                                <option value="">Referral</option>
+                                <option value="">Insta</option>
+                                <option value="">other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br><br>
+
+                    <input type="submit" class="btn btn-outline-dark" value="Submit">
+                </div>
+        </form>
+    </div>
+    <footer class="text-bg-black">
+
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+        <br>
+        <br>
+
+        <section>
+            <div class="container" style="background-color:#f1f1f1">
+        
+              <footer class="text-center text-white" style="background-color:rgb(199, 159, 85) ;">
+        
+                <div class="container p-4 pb-0">
+        
+                  <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-facebook"></i></a>
+        
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-twitter"></i></a>
+        
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-google"></i></a>
+        
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="bi bi-instagram"></i></a>
+        
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-linkedin"></i></a>
+        
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-github"></i></a>
+                  </section>
+                  <!-- Section: Social media -->
+                </div>
+                <!-- Grid container -->
+        
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgba(222, 218, 214, 0.2);">
+                  © 2020 Copyright:
+                  <a class="text-white" href="https://mdbootstrap.com/">TheDCompany@gmail.com</a>
+                </div>
+                <!-- Copyright -->
+              </footer>
+        
+            </div>
+        
+          </section>
+
+
+    <div id="navbar">
+        <a id="top-head" href="#home">THINK DESIGN</a>
+        <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </a>
+        <a id="top-side" href="#home">HOME&nbsp;&nbsp;&nbsp;</a>
+        <a id="top-side" href="#news">ABOUT&nbsp;&nbsp;&nbsp;</a>
+        <a id="top-side" href="#news">SERVICES&nbsp;&nbsp;&nbsp;</a>
+        <a id="top-side" href="#contact">PORTFOLIO&nbsp;&nbsp;&nbsp;</a>
+        <a id="top-side" href="#news">CLIENT&nbsp;&nbsp;&nbsp;</a>
+        <a id="top-side" href="#contact">CONTACT&nbsp;</a>
+        <div class="btn-group">
+            <button id="top-side" type="button" class="btn dropdown-toggle"
+                data-bs-toggle="dropdown">ACCESSIBILITY</button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">INCREASE FONT A<sup>+</sup>|A|A<sup>-</sup></a></li>
+                <li><a class="dropdown-item" href="#">CHANGE THEAM (RBG)</a></li>
+                <li><a class="dropdown-item" href="#">ACTIVE VOICE NOTES</a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
