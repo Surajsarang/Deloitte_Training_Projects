@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="English">
+
+<head> 
+    <title>Layout Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+     h1
+        {
+            
+            color: blue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 900;
+            font-style: italic;
+            text-shadow: 5px 5px 10px rgb(220, 138, 15);
+        }
+
+        ul li{
+            border: 2px solid rgb(23, 22, 22);
+            background-color: pink;
+            width: 100%;
+            text-align: center;
+            margin: 5px;
+            padding: 10px;
+            list-style-type: none;
+            float: left;
+        
+        }
+        .example 
+        {
+          padding: 10px;
+          color: rgb(16, 16, 16);
+          
+        }
+
+        @media only screen and (max-width: 600px) 
+        {
+           .example {background: red;}
+        }
+
+        @media only screen and (min-width: 600px) 
+        {
+           .example {background: rgb(18, 198, 132);}
+        }
+
+        @media only screen and (min-width: 750px)
+         {
+           .example {background: rgb(194, 223, 28);}
+        }
+
+        ul
+        {
+          text-align: center;
+          
+        }
+        
+       * {box-sizing: border-box;}
+    </style>
+</head>
+<body class="example">
+    <h1> 
+        Microsoft Products
+    </h1>
+    <br>
+    <hr>
+
+    
+        <div >
+          <ul>
+            <li>Microsoft XBox</li>
+            <li>Surface Laptop</li>
+            <li>Auzur Cloud</li>
+            <li>Windows 11</li>
+          </ul>
+        </div>
+        
+</body>
+
+</html>
