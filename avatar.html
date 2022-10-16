@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> avatar </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html 
+        {
+                   display: table;
+                   margin: auto;
+        }
+
+        body 
+        {
+                    
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 900px;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    font-size: medium;
+                    font-weight: 500;
+                    background-color: azure;
+        }
+
+        section div
+        {
+           float: left;
+        }
+       #demo1{
+        width: 600px;
+        font-size: 30px;
+       }
+       #x{
+        padding-left: 90px;
+        width: 300px;
+        height: 500px;
+    
+
+       }
+
+       
+    </style>
+
+    </head>
+    <body>
+        <div class="container-fluid p-3 bg-warning text-white text-center">
+            <h1>EMPLOYEE INFORMATION</h1>
+            <p>SARANG GROUP OF INDUSTRIES</p> 
+            <p> Presented By: Suraj Kumar</p>
+          </div>
+
+    <h3 style="text-align:center; background-color: rgb(175, 175, 186); height: 35px;"> <b>Personal Details</b> </h3>
+    <br>
+    <br>
+    <button type="button" onclick="Show()" value="Click Here">Click Here to Get User Details</button>
+    <br>
+    <br>
+    <section>
+    <div id="demo1"></div>
+     <div>&nbsp;&nbsp;</div>
+    <div id="x"></div>
+    </section>
+    <br>
+    <br>
+    <br>
+    
+    <script>
+        
+        var  str  = '{"id":2,"email":"janet.weaver@reqres.in","contact":"6205222567","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg","Salary":"80000","Addres":"California", "Country":"America"}';
+        const obj = JSON.parse(str);
+        function Show()
+         {
+          document.getElementById("demo1").innerHTML = "Employee ID:   "+ obj.id
+          + "<br>Employee Name:   " + obj.first_name + " " + obj.last_name + "<br> E-Mail:  "+ obj.email + "<br> Contact no.:   "+ obj.contact+ "<br> Salary:   " + obj.Salary+ "<br>Addres:   " +obj.Addres + "<br> Country:   "+obj.Country;
+
+          var img = document.createElement("img");
+          img.src = "cs.jpg";
+
+          var div = document.getElementById("x");
+          div.appendChild(img);
+
+          document.getElementById("x").border=str;
+           
+        }
+
+    </script>
+
+    
+
+    </body>
+    </html>

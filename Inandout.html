@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> JSON WORK </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html 
+        {
+                   display: table;
+                   margin: auto;
+        }
+
+        body 
+        {
+                    
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 1100px;
+                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    font-size: medium;
+                    font-weight: 700;
+                    background-color: azure;
+        }
+
+
+    </style>
+    </head>
+
+
+    <body>
+
+        <div class="container-fluid p-4 bg-primary text-white text-center">
+            <h1>Working with JSON</h1>
+            <p>Application Programming Interface</p> 
+            <p> Presented By: Suraj Kumar</p>
+        </div>
+
+        <br>
+
+        <div class="container-fluid p-0 bg-primary text-white text-center">
+            <h1>ENTER EMPLOYEE INFORMATION</h1>
+            <p>Sarang Group of Industrpies</p> 
+            <p> Powered by: TATA Group</p>
+        </div>
+        <br>
+        <br>
+        <section>
+            <form id="new" action="PayslipServlet" method="get"> 
+                <label for="EmpNo">Enter Six Digits Employee Number:</label>
+                &nbsp;
+                <input type="text" id="EN" name="EmpNo" placeholder="Ex. 786789" size="20" autofocus>
+                <br>
+                <br>
+                
+                <label for="EmpName">Employee Name:</label>
+                &nbsp;
+                <input type="text" id="EN1" name="EmpName" placeholder="Ex.Suraj Kumar" size="20">
+
+                <br>
+                <br>
+                
+                <label for="JP">Job Position:</label>
+                &nbsp;
+                <input type="text" id="JP" name="JP" placeholder="Ex. Senior Manager" size="20">
+                <br>
+                <br>
+                
+                <label for="Salary">Salary:</label>
+                &nbsp;
+                <input type="number" id="sal" name="Salary" size="20">
+                <br>
+                <br>
+                
+                <label for="DN">Department Name:</label>
+                &nbsp;
+                <input type="text" id="DN" name="DN"  size="20">
+                <br>
+                <br>
+                
+                <label for="DR">Department Registration No.:</label>
+                &nbsp;
+                <input type="number" id="DR" name="DR"  size="20">
+            </form>
+
+        </section>
+        <br>
+        <br>
+        <section>
+            <h4> Please Check The Information You Have Entered</h4>
+            <br>
+            
+            <button type="button" form="new" onclick="Show()">Clik Here</button>
+            <p id="demo1"></p>
+             
+             <br>
+             <br>
+             
+             <br>
+             <button type="button" form="new" onclick="change()">Clik Here to convert to JSON</button>
+             <br>
+             
+             <p id="demo2"></p>
+
+        </section>
+        <script>
+            function Show()
+             {
+              document.getElementById("demo1").innerHTML ="Employee ID: "+ document.getElementById('EN').value 
+              + "<br>Employee Name: " + document.getElementById('EN1').value + " <br> Job Position: " + document.getElementById('JP').value
+               + " <br> Salary: " + document.getElementById('sal').value + "<br> Department Name: " + document.getElementById('DN').value
+               + "<br> Department Registration Number: " + document.getElementById('DR').value + "<br> <br> <br> If any Information is wrong please refresh the page and enter again";
+
+               
+            }
+
+            function change()
+            {
+                var data = {};
+                var to1 = document.getElementById('EN'),
+                    to2 = document.getElementById('EN1'),
+                    to3 = document.getElementById('JP'),
+                    to4 = document.getElementById('sal'),
+                    to5 = document.getElementById('DN'),
+                    to6 = document.getElementById('DR');
+
+                data.empno= to1.value;
+                data.empname= to2.value;
+                data.position= to3.value;
+                data.salary= to4.value;
+                data.department_name= to5.value;
+                data.department_no= to6.value;
+
+                const myJSON = JSON.stringify(data);
+                document.getElementById("demo2").innerHTML = myJSON;
+            }
+          </script>
+
+        
+    </body>
+    </html>

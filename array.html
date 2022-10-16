@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> JSON Converstion</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html 
+        {
+                   display: table;
+                   margin: auto;
+        }
+
+        body 
+        {
+                    
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 900px;
+        }
+    </style>
+    </head>
+    <body>
+
+        <div class="container-fluid p-4 bg-warning text-white text-center">
+            <h2>Converting JSON Array into JS Object </h2>
+            <h5>Application Programming Interface </h5> 
+            <p> Presented By: Suraj Kumar</p>
+        </div>
+        <section>
+
+        <h5> Information about the Employee you searched for...</h5>
+
+        <p id="demo"></p>
+
+        <script>
+        const text = '[ {"sid":1025,"sname":"Scott","age":25},{"sid":1026,"sname":"Sam","age":26},{"sid":1027,"sname":"Sandy","age":27},{"sid":1028,"sname":"Sriman","age":28},{"sid":1029,"sname":"Sowmya","age":29}]';
+        const myArr = JSON.parse(text);
+        document.getElementById("demo").innerHTML = myArr[4].sname +" With ID="+myArr[4].sid;
+        </script>
+        </section>
+        <br>
+        <br>
+        <br>
+        <div class="container-fluid p-4 bg-warning text-white text-center">
+            <h2>Converting JS Object  Array into JSON Array</h2>
+            <h5>Application Programming Interface </h5> 
+            <p> Presented By: Suraj Kumar</p>
+        </div>
+        <h5> Information saved as string in Data Base of Server Site</h5>
+
+        <p id="demo1"></p>
+
+        <section>
+            <script>
+                const studentsArray =  [
+							{sid :  1025,  sname  : "Scott", age : 25}, 					 
+							{sid :  1026,  sname  : "Sam", age : 26}, 					 
+							{sid :  1027,  sname  : "Sandy", age : 27}, 					 
+							{sid :  1028,  sname  : "Sriman", age : 28}, 					 
+							{sid :  1029,  sname  : "Sowmya", age : 29}			 
+					 ];
+                const myJSON = JSON.stringify(studentsArray);
+                document.getElementById("demo1").innerHTML = myJSON;
+            </script>
+        </section>
+
+
+        
+    </body>
+   
+    </html>

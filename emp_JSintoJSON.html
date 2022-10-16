@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Array</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html 
+        {
+                   display: table;
+                   margin: auto;
+        }
+
+        body 
+        {
+                    
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 900px;
+        }
+    </style>
+    </head>
+    <body>
+
+        <div class="container-fluid p-4 bg-warning text-white text-center">
+            <h2>Converting JSON into JS Object </h2>
+            <h5>Application Programming Interface </h5> 
+            <p> Presented By: Suraj Kumar</p>
+        </div>
+        <section>
+        
+
+        <h5> Information about the Employee you searched for...</h5>
+
+        <p id="demo"></p>
+
+        <script>
+        const text = '{"name":"Suraj Sarang","id":786879, "age":23, "city":"Chittranjan", "State":"West Bengal"}'
+        const obj = JSON.parse(text);
+        document.getElementById("demo").innerHTML = obj.name + " ,of age " + obj.age + " and ID=" + obj.id + " from " + obj.city + ", " +obj.State ;
+        </script>
+        </section>
+        <br>
+        <br>
+        <br>
+        <div class="container-fluid p-4 bg-warning text-white text-center">
+            <h2>Converting JS Object into JSON</h2>
+            <h5>Application Programming Interface </h5> 
+            <p> Presented By: Suraj Kumar</p>
+        </div>
+        <h5> Information saved as string in Data Base of Server Site</h5>
+
+        <p id="demo1"></p>
+
+        <section>
+            <script>
+                const obj2 = {name: "Suraj Sarang", id: 786789, age: 30, city: "Chittranjan", State: "West Bengal"};
+                const myJSON = JSON.stringify(obj2);
+                document.getElementById("demo1").innerHTML = myJSON;
+            </script>
+        </section>
+
+
+        
+    </body>
+   
+    </html>

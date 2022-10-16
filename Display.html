@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Display</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html 
+        {
+                   display: table;
+                   margin: auto;
+        }
+
+        body 
+        {
+                    
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 900px;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    font-size: medium;
+                    font-weight: 500;
+                    background-color: azure;
+        }
+
+        section div
+        {
+           float: left;
+        }
+       #demo1{
+        width: 600px;
+        font-size: 30px;
+       }
+       #x{
+        padding-left: 90px;
+        width: 300px;
+        height: 500px;
+    
+
+       }
+
+       
+    </style>
+
+    </head>
+    <body>
+        <div class="container-fluid p-3 bg-warning text-white text-center">
+            <h1>EMPLOYEE INFORMATION</h1>
+            <p>SARANG GROUP OF INDUSTRIES</p> 
+            <p> Presented By: Suraj Kumar</p>
+          </div>
+
+    <h3 style="text-align:center; background-color: rgb(175, 175, 186); height: 35px;"> <b>Personal Details</b> </h3>
+    <br>
+    <br>
+    <h4> Enter the name of the user that you want to search</h4><br>
+    <input type="text", name="sname" id="sd" placeholder="First Name" autofocus>
+    <br>
+    <br>
+    <button type="button" onclick="check()">Click Here to Get User Details</button>
+    <br>
+    <br>
+    <section>
+    <div id="demo1"></div>
+     <div>&nbsp;&nbsp;</div>
+    <div id="x"></div>
+    </section>
+    <br>
+    <br>
+    <br>
+    
+    <script>
+        
+        var  str  = '[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}]';
+        const obj = JSON.parse(str);
+
+        function check()
+        {
+           var ob = document.getElementById("sd");
+           var tt = ob.value;
+
+            for(var i=0; i<obj.length; i++)
+            {
+                if( obj[i].first_name == tt)
+                {
+                    
+                    Show(i);
+                }
+
+            
+            }
+        }
+
+        function Show(x)
+         {
+          document.getElementById("demo1").innerHTML = "Employee ID:   "+ obj[x].id
+          + "<br>Employee Name:   " + obj[x].first_name + " " + obj[x].last_name + "<br> E-Mail:  "+ obj[x].email;
+
+          var img = document.createElement("img");
+          img.src = "cs.jpg";
+
+          var div = document.getElementById("x");
+          div.appendChild(img);
+
+          document.getElementById("x").border=str;
+           
+        }
+
+    </script>
+
+    
+
+    </body>
+    </html>
