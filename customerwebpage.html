@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Image JavaScript
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+
+            display: table-cell;
+            vertical-align: middle;
+            width: 900px;
+            font-size: medium;
+            font-weight: 500;
+            background-color: azure;
+        }
+
+        .container-fluid {
+            background-color: rgb(43, 43, 239);
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+
+
+</head>
+
+
+
+<body>
+    <div class="container-fluid">
+        <h1>IRCTC TICKET RESERVATION</h1>
+        <p>INDIAN RAILWAY</p>
+        <p> Presented By: Suraj Kumar</p>
+    </div>
+    <br><br>
+    <form action="login.php" method="get" onsubmit="fn_submitData()">
+
+        Passanger Name: <input type="text" id="pname" name="pname" size="20" onblur="fn_cursorLeave()" autofocus>
+        &nbsp;&nbsp;<span id="sp1" style="color:red;"></span>
+        <br>
+        <br>
+
+        Boarding Station: <input type="text" id="bname" name="bname" size="20">
+        <br>
+        <br>
+
+        Destination Station: <input type="text" id="dname" name="dname" size="20">
+        <br>
+        <br>
+
+        Contact No.: <input type="text" placeholder="enter 10 digits number" id="cname" name="cname" size="20"
+            onclick="fn_contact()">
+        &nbsp;&nbsp;<span id="sp2" style="color:red;"></span>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <input type="submit" value="Confierm Reservation">
+
+    </form>
+
+
+
+    <script>
+        function fn_submitData() {
+            var bname = document.getElementById("bname").value;
+            var dname = document.getElementById("dname").value;
+            var cname = document.getElementById("cname").value;
+            
+            if (bname == dname) {
+                alert("Boarding and Destination Station cant be same");
+                event.preventDefault();
+            }
+
+            console.log(parseInt(cname));
+
+            if ( parseInt(cname) == "NaN" || (isInteger(parseInt(cname)) == true && cname.toString().length !== 10)){
+
+                alert("Contact Number should not be less or more than 10 digits <br> It should contain only digits no strings");
+                event.preventDefault();
+            }
+            else {
+                // allow to proceed
+            }
+        }
+
+
+
+
+        function fn_cursorLeave() {
+            var pname = document.getElementById("pname").value;
+
+            if (pname == "") {
+
+                document.getElementById("sp1").innerHTML = "Passanger Nmae is required";
+                document.getElementById("pname").focus();
+            }
+            else {
+                document.getElementById("sp1").innerHTML = "";
+            }
+
+        }
+
+
+
+        function fn_contact() {
+            var cname = document.getElementById("pname").value;
+
+            if (cname.toString().length > 10 || cname.toString().length < 10) {
+
+                document.getElementById("sp2").innerHTML = "Contact Number should not be less or more than 10 digits";
+
+            }
+            else {
+                document.getElementById("sp2").innerHTML = "";
+            }
+
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

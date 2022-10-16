@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Image JavaScript
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+
+            display: table-cell;
+            vertical-align: middle;
+            width: 900px;
+            font-size: medium;
+            font-weight: 500;
+            background-color: azure;
+        }
+
+        .container-fluid {
+            background-color: rgb(133, 133, 202);
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>JAVA Img Layout ASSIGNMENT</h1>
+        <p>ADVANCED FRONTEND DEVELOPMENT</p>
+        <p> Presented By: Suraj Kumar</p>
+    </div>
+    <br>
+    <br>
+    <h4> Deloitte Braches in India </h4>
+    <select id="s1" onchange="fn_updateImage()">
+        <option >Select place</option>
+        <option >Hyderabad</option>
+        <option >Bangolre</option>
+        <option >Pune</option>
+        <option >Gurugram</option>
+        <option >Mumbai</option>
+    </select>
+    <br>
+    <br>
+    <img   src="image1.jpg"  id="img1"  border="2"  width="500"  height="600"  />
+		
+  
+		
+	<script>
+		
+    
+        function fn_updateImage()
+        {
+              var  selectObj  =  document.getElementById("s1");
+              var   imgObj =   document.getElementById("img1");
+              
+              imgObj.src = selectObj.value + ".jpg";
+           
+        }
+      
+       
+       
+  </script>
+		
+	 
+		
+	</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Table JavaScript
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+
+            display: table-cell;
+            vertical-align: middle;
+            width: 900px;
+            font-size: medium;
+            font-weight: 500;
+            background-color: azure;
+        }
+
+        .container-fluid {
+            background-color: rgb(133, 133, 202);
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>JAVA SCRIPT MAP() METHOD ASSIGNMENT</h1>
+        <p>ADVANCED FRONTEND DEVELOPMENT</p>
+        <p> Presented By: Suraj Kumar</p>
+    </div>
+    <br>
+    <br>
+    <br>
+
+
+    <form action="login.php" method="get" onsubmit="fn_submitData()">
+
+        User Id : <input type="text" id="uid" name="uid" onblur="fn_cursorLeave()" autofocus />
+        <span id="sp1" style="color:red;"></span>
+        <br /><br />
+        Password : <input type="text" id="pwd1" name="pwd1" />
+        <br /><br />
+        Retype Password : <input type="text" id="pwd2" name="pwd2" />
+        <br /><br />
+        <input type="submit" value="Register" />
+
+    </form>
+
+
+
+
+    <script>
+        function fn_submitData() {
+            var userID = document.getElementById("uid").value;
+            var password1 = document.getElementById("pwd1").value;
+            var password2 = document.getElementById("pwd2").value;
+
+
+            if (password1 == password2) {
+                // allow to submit
+            }
+
+            else {
+                if (userId == " " || userID == "  " || userID == "   " || userID == "    " || userID == "     ") {
+
+                    alert("User id should contain text and numbers not spaces");
+                    event.preventDefault();
+
+                }
+                else {
+
+                    alert("Password and retype password should be same");
+                    event.preventDefault();
+                }
+            }
+        }
+
+
+        function fn_cursorLeave() {
+            var userId = document.getElementById("uid").value;
+
+            if (userId == "") {
+
+                document.getElementById("sp1").innerHTML = "User id is required";
+                document.getElementById("uid").focus();
+            }
+
+            else {
+                document.getElementById("sp1").innerHTML = "";
+            }
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

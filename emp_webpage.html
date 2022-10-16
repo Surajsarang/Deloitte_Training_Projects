@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Employee JavaScript
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+
+            display: table-cell;
+            vertical-align: middle;
+            width: 900px;
+            font-size: medium;
+            font-weight: 500;
+            background-color: azure;
+        }
+
+        .container-fluid {
+            background-color: rgb(128, 128, 239);
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+
+        #output {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Employee Details working with JS Objects</h1>
+        <p>ADVANCED FRONTEND DEVELOPMENT</p>
+        <p> Presented By: Suraj Kumar</p>
+    </div>
+    <br>
+    <br>
+
+
+    <h3 style="text-align:center;">Working with Employee Objects in JavaScript</h3>
+    <br>
+    <hr />
+
+    <div style="text-align:center;">
+
+        <input type="button" value="JS Object Type 1"
+            onclick="fn_obj1()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <input type="button" value="JS Object Type 2"
+            onclick="fn_obj2()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <input type="button" value="JS Object Type 3" onclick="fn_obj3()" />
+
+    </div>
+
+    <br></br>
+
+    <div id="output"> </div>
+
+    <script>
+        function fn_obj1() {
+            var s1 = { EmpId: 1025, EmpName: "Sarang", EmpDep: "IT", EmpSalary: 70000 };
+
+            var str = `Employee Id  : ${s1.EmpId} <br>   Employee Name  :  ${s1.EmpName} <br> Employee Department: ${s1.EmpDep} <br> Employee Salary: ${s1.EmpSalary} `;
+
+            var obj = document.getElementById("output").innerHTML = str;
+            
+        }
+
+
+
+        function fn_obj2() {
+            var s2 = {};
+            s2.EmpId = 2056;
+            s2.EmpName = "Suraj";
+            s2.EmpDep = " R&D";
+            s2.EmpSalary = 150000;
+
+
+            var str = `Employee Id  : ${s2.EmpId} <br>   Employee Name  :  ${s2.EmpName} <br> Employee Department: ${s2.EmpDep} <br> Employee Salary: ${s2.EmpSalary} `;
+            var obj = document.getElementById("output").innerHTML = str;
+            
+        }
+
+
+
+
+        function con_fn_Employee() {
+            this.EmpId = 2056;
+            this.EmpName = "Bhargav";
+            this.EmpDep = "Electrician";
+            this.EmpSalary = 15000;
+        }
+
+
+
+        function fn_obj3() {
+            var s3 = new con_fn_Employee();
+
+            var str = `Employee Id  : ${s3.EmpId} <br>   Employee Name  :  ${s3.EmpName} <br> Employee Department: ${s3.EmpDep} <br> Employee Salary: ${s3.EmpSalary} `;
+            document.getElementById("output").innerHTML = str;
+            
+        }
+
+
+    </script>
+</body>
+
+</html>
