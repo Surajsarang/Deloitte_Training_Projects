@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Employee JavaScript
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+
+            display: table-cell;
+            vertical-align: middle;
+            width: 900px;
+            font-size: medium;
+            font-weight: 500;
+            background-color: azure;
+        }
+
+        .container-fluid {
+            background-color: rgb(239, 200, 128);
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Employee Details working with JS</h1>
+        <p>ADVANCED FRONTEND DEVELOPMENT</p>
+        <p> Presented By: Suraj Kumar</p>
+    </div>
+    <br>
+    <br>
+
+    <h3 style="text-align:center;">Get Information about Employee of Deloitte</h3>
+    <br>
+    <hr />
+
+    <div style="text-align:center;">
+
+        <input type="button" value="Find by Emp No."
+            onclick="fn_obj1()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <input type="button" value="Find by Emp. Name"
+            onclick="fn_obj2()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <input type="button" value="Find by Emp. Job" onclick="fn_obj3()" />
+
+    </div>
+
+    <br></br>
+
+    <div id="input" style="text-align:center;"> </div>
+    <div id="output" style="text-align:center;"> </div>
+    <div id="tableout" style="text-align:center ;"></div>
+
+    <script>
+
+        var s1 =
+            [{ EmpId: 1021, EmpName: "S.Sarang", EmpDep: "IT", EmpSalary: 80000 },
+            { EmpId: 1022, EmpName: "M.Sarang", EmpDep: "Manger", EmpSalary: 70000 },
+            { EmpId: 1023, EmpName: "K.Sarang", EmpDep: "Sr. Manger", EmpSalary: 70000 },
+            { EmpId: 1024, EmpName: "T.Sarang", EmpDep: "Ass. Manger", EmpSalary: 70000 },
+            { EmpId: 1025, EmpName: "U.Sarang", EmpDep: "Analyst", EmpSalary: 70000 },
+            { EmpId: 1026, EmpName: "Y.Sarang", EmpDep: "Manger", EmpSalary: 70000 },
+            { EmpId: 1027, EmpName: "I.Sarang", EmpDep: "Manger", EmpSalary: 70000 },
+            { EmpId: 1028, EmpName: "P.Sarang", EmpDep: "Manger", EmpSalary: 70000 }];
+
+        function fn_obj1() {
+
+            document.getElementById("input").innerHTML = "Enter Employee Number: <input type='number' id='empid' autofocus > <button type='button' value= 'Get Dtails' onclick= fn_doit_empid()>GET DETAILS</button>";
+
+
+        }
+
+
+
+
+        function fn_obj2() {
+
+            document.getElementById("input").innerHTML = "Enter Employee Name: <input type='text' id='empid' autofocus > <button type='button' value= 'Get Dtails' onclick= fn_doit_empid()>GET DETAILS</button>";
+
+        }
+
+
+        function fn_doit_empid() {
+
+            var search = document.getElementById("empid").value;
+
+            for (var i = 0; i < s1.length; i++) {
+                if (s1[i].EmpId == search) {
+                    document.getElementById("output").innerHTML =
+                        `<br><br><table><tr> <th>Employee ID &nbsp;&nbsp;&nbsp;</th><th>Employee Name&nbsp;&nbsp;&nbsp;</th><th>Employee Department&nbsp;&nbsp;&nbsp;</th><th>Salary&nbsp;&nbsp;&nbsp;</th></tr><tr><td>${search}</td><td> ${s1[i].EmpName}</td><td>${s1[i].EmpDep}</td><td>${s1[i].EmpSalary}</tr></table>`;
+                }
+
+                if (s1[i].EmpName == search) {
+                    document.getElementById("output").innerHTML =
+                        `<br><br><table><tr> <th>Employee ID &nbsp;&nbsp;&nbsp;</th><th>Employee Name&nbsp;&nbsp;&nbsp;</th><th>Employee Department&nbsp;&nbsp;&nbsp;</th><th>Salary&nbsp;&nbsp;&nbsp;</th></tr><tr><td>${s1[i].EmpId}</td><td> ${s1[i].EmpName}</td><td>${s1[i].EmpDep}</td><td>${s1[i].EmpSalary}</tr></table>`;
+                }
+                
+                else
+                {
+                    document.getElementById("output").innerHTML ="<br> <br> Enter Details does not match Please Recheck and enter again";
+                }
+
+            }
+        }
+
+
+        function fn_obj3() {
+
+            document.getElementById("input").innerHTML = "Enter Employee Job Area: <input type='text' id='empid'> <button type='button' value= 'Get Dtails' onclick= fn_job()>GET DETAILS</button>";
+            document.getElementById("tableout").innerHTML ="<br><br><table id='table1'><tr> <th>Employee ID &nbsp;&nbsp;&nbsp;</th><th>Employee Name&nbsp;&nbsp;&nbsp;</th><th>Employee Department&nbsp;&nbsp;&nbsp;</th><th>Salary&nbsp;&nbsp;&nbsp;</th></tr></table>`"
+        }
+
+        function fn_job() {
+
+            var ipObj = document.getElementById("empid");
+
+            var filObj = s1.filter(s1 => s1.EmpDep == ipObj.value);
+
+            fn_addRows(filObj);
+
+
+
+        }
+
+
+
+        function fn_addRows(obj) {
+
+            var tableObj = document.getElementById("table1");
+
+
+
+            for (let item of obj) {
+
+                var row1 = tableObj.insertRow(-1);
+
+
+
+                var cell1 = row1.insertCell(-1);
+
+                var cell2 = row1.insertCell(-1);
+
+                var cell3 = row1.insertCell(-1);
+
+                var cell4= row1.insertCell(-1);
+
+
+
+                cell1.innerHTML = item.EmpId;
+
+                cell2.innerHTML = item.EmpName;
+
+                cell3.innerHTML = item.EmpDep;
+                cell4.innerHTML = item.EmpSalary;
+
+
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>
