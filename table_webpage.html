@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Table Webpage
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+
+            display: table-cell;
+            vertical-align: middle;
+            width: 1000px;
+            font-size: medium;
+            font-weight: 500;
+            background-color: white;
+        }
+
+        .container-fluid {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h2>
+            ENTER THE VALUE TO ADD IN TABLE
+        </h2>
+        <p>SARANG GROUP OF INDUSTRIES</p>
+    </div>
+    <br>
+
+    <h4>ENTER THE DETAILS:</h4>
+    <br>
+    PRODUCT NAME: <input type="text" id="pname" autofocus>
+    UNIT PRICE: <input type="number" id="uprice">
+    TOTAL QUANTITY: <input type="number" id="tq">
+    <br>
+    <br>
+    <button type="button" id="btn">ADD DATA</button>&nbsp;
+
+
+    <br>
+    <br>
+
+
+    <table id="table1" border="2" width="1000px">
+
+        <tr>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Total Quantity</th>
+        </tr>
+        <tr>
+            <td>Printer</td>
+            <td>2500.00</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>4GB-RAM</td>
+            <td>1200.00</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>1TB Samsung HDD</td>
+            <td>4500.00</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>32-GB Kingston USB</td>
+            <td>800.00</td>
+            <td>35</td>
+        </tr>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <script>
+
+
+
+        $(document).ready(function () {
+
+            const btn = document.getElementById('btn');
+            btn.addEventListener('click', function handleClick(event) {
+
+                event.preventDefault();
+
+                var proname = document.getElementById("pname").value;
+                var cost = document.getElementById("uprice").value;
+                var qty = document.getElementById("tq").value;
+
+                var str = `<tr> <td> ${proname} </td> <td> ${cost} </td> <td> ${qty} </td> </tr>`;
+
+                $("#table1").append(str);
+
+                const inputs = document.querySelectorAll('#pname, #uprice, #tq');
+
+                inputs.forEach(input => {
+                    input.value = '';
+                });
+            });
+
+            });
+    </script>
+
+</body>
+
+</html>

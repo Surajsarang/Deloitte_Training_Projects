@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Table Webpage
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+
+            display: table-cell;
+            vertical-align: middle;
+            width: 1000px;
+            font-size: medium;
+            font-weight: 500;
+            background-color: white;
+        }
+
+        .container-fluid {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h2>
+            GIVING COLOUR TO TABLE
+        </h2>
+        <p>PRESENTED BY: SURAJ SARANG</p>
+    </div>
+
+    <table id="table1" border="2" width="1000px">
+        <tr>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Total Quantity</th>
+        </tr>
+        <tr>
+            <td>Printer</td>
+            <td>2500.00</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>4GB-RAM</td>
+            <td>1200.00</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>1TB Samsung HDD</td>
+            <td>4500.00</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>32-GB Kingston USB</td>
+            <td>800.00</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td>Wifi Router</td>
+            <td>1800.00</td>
+            <td>0</td>
+        </tr>
+
+
+
+        <tr>
+            <td>1TB Samsung HDD</td>
+            <td>4500.00</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>32-GB Kingston USB</td>
+            <td>800.00</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td>Wifi Router</td>
+            <td>1800.00</td>
+            <td>0</td>
+        </tr>
+
+
+        <tr>
+            <td>Printer</td>
+            <td>2500.00</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>4GB-RAM</td>
+            <td>1200.00</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>1TB Samsung HDD</td>
+            <td>4500.00</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>32-GB Kingston USB</td>
+            <td>800.00</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td>Wifi Router</td>
+            <td>1800.00</td>
+            <td>0</td>
+        </tr>
+
+
+
+        <tr>
+            <td>1TB Samsung HDD</td>
+            <td>4500.00</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>32-GB Kingston USB</td>
+            <td>800.00</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td>Wifi Router</td>
+            <td>1800.00</td>
+            <td>0</td>
+        </tr>
+
+    </table>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $("#table1 tr").each(function () {
+                var col = $(this).find("td").eq(2).html();
+                if (col == 0) {
+                    $(this).css("background-color", "lightgreen");
+                }
+
+            });
+
+            $("#table1  tr:first").css("background-color",  "pink");
+			 $("#table1  tr:last").css("background-color",  "grey");
+
+        });
+
+    </script>
+
+</body>
+
+</html>

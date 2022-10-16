@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        IMAGE ANIMATION
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body {
+
+            display: table-cell;
+            vertical-align: middle;
+            width: 1000px;
+            font-size: medium;
+            font-weight: 500;
+            background-color:rgb(246, 242, 242);
+            border: 5px solid black;
+
+    
+        }
+
+        .container-fluid {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .main{
+            text-align: center;
+            background-color: grey;
+        }
+
+        .design{
+            width:290px ; 
+            margin:20px; 
+            float:left;
+            text-align:center; 
+            padding:20px; 
+            border:3px solid black;
+            font-family: 'Times New Roman', Times, serif;
+        
+
+        }
+
+        #btn1 ,#btn2{
+
+            background-color: black;
+            color: white;
+        }
+
+        img{
+            border: 2px solid black;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>INFORMATION DIRECTRIES</h1>
+        <p>SARANG GROUP OF INDUSTRIES</p>
+    </div>
+    <br>
+    <div style="text-align: center;">
+    <button type="button" id="btn1" >GET ALL DATA</button>
+    <button type="button" id="btn2" >REMOVE DATA</button>
+    </div>
+    <hr>
+
+    <div class="main"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                var url = "https://reqres.in/api/users";
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    success: function (response) {
+                        display(response.data);
+
+                    }
+
+                })
+                function display(item) {
+                    for (let i = 0; i < item.length; i++) {
+
+                        let str = `<div class="design"> 
+                                   <img src="${item[i].avatar}"><br/>
+                                   <u><h3>${item[i].first_name + " " + item[i].last_name}</h3></u>
+                                   <br>Email id:${item[i].email}</p></div>`
+
+                        $(".main").append(str);
+                    }
+
+                }
+            })
+
+            $("#btn2").click(function () { $(".main").empty();})
+        })
+
+    </script>
+</body>
+
+</html>
