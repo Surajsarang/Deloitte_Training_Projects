@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Bank Login</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <style>
+             html 
+             {
+                   display: table;
+                   margin: auto;
+             }
+
+                
+             .main 
+             {
+                max-width: 1000px;
+                margin: auto;
+             }
+
+            body 
+            {
+              background-color: #272729;
+              display: table-cell;
+              vertical-align: middle;
+              background-repeat: repeat-x;
+              width: max-content;
+              float: left;
+              padding-top: 50px;
+              padding-left: 50px;
+              padding-top: 25px;
+            }
+    
+            
+    
+            div.mystyle
+            {
+              background: azure;
+              opacity: 0.95;
+              width: 900px;
+              padding: 8px;
+              padding-left: 15px;
+              font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+              font-size: large;
+              font-weight: 550;
+              padding-top: 15px;
+              padding-bottom: 15px;
+              
+            }
+    
+            span.my
+            {
+                color: red;
+            }
+    
+            h5
+            {
+              
+                color: rgb(59, 26, 247);
+                
+                background-color: white;
+                padding-left: 3px;
+                
+            }
+           
+            .container-fluid{
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: larger;
+                font-weight: 500;
+                word-spacing: 5px;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <!--Heading Part-->
+
+        <div class="main">
+            <div class="container-fluid p-4 bg-primary text-white text-center">
+                <h2>NEW BANK ACCOUNT REGISTRATION</h2>
+                <h4>TATA INDUSTRIAL BANK OF INDIA</h4>
+                <p> Banking means Trust!</p>
+              </div>
+
+        <!--Body Containt-->
+    
+        <div class="mystyle">
+            <form id="new">
+
+
+            <h5> Personal Details Section:</h5>
+              <br>
+              <label for="fname">Full Name:</label><span class="my"> &#42;</span> <br>
+              <input type="text" placeholder="First Name" id="fname" name="fname" autofocus >
+              <input type="text" placeholder="Middle Name" id="fname" name="fname" >
+              <input type="text" placeholder="Last Name" id="fname" name="fname" >
+            
+              <br>
+              <br>
+              
+              <label for="fname">Father or Guardian Name:</label><span class="my"> &#42;</span> <br>
+              <input type="text" placeholder="First Name" id="fname" name="fname" >
+              <input type="text" placeholder="Middle Name" id="fname" name="fname" >
+              <input type="text" placeholder="Last Name" id="fname" name="fname" >
+
+              <br>
+              <br>
+              
+              <label for="fname">Mother Name:</label><br>
+              <input type="text" placeholder="First Name" id="fname" name="fname" >
+              <input type="text" placeholder="Middle Name" id="fname" name="fname" >
+              <input type="text" placeholder="Last Name" id="fname" name="fname" >
+
+              <br>
+              <br>
+              <br>
+              
+
+              <label for="fname">Date of Birth:</label><span class="my"> &#42;</span>
+              <input type="date" id="fname" name="fname" >
+
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+              <label for="fname">Age:</label><span class="my"> &#42;</span>
+              <input type="number" min="12" max="120" step="1" id="fname" name="fname" >
+              <br>
+
+              <p> (If age is below 18 Minor Requried Please Vist the home page)</p>
+
+              <br>
+              <label for="fname">Gender:</label><span class="my"> &#42;</span>&nbsp;&nbsp;
+              <input type="radio" name="gender" value="male"> Male &nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="radio" name="gender" value="female"> Female &nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="radio" name="gender" value="other"> Other
+
+              <br>
+              <br>
+              <br>
+              
+              
+
+              <label for="lname">Adress:</label><br>
+              <input type="text"  placeholder=" Local Adress" id="l1name" name="l1name" size="20" >
+              <input type="text"  placeholder="City" id="l2name" name="l2name" size="10" >
+              <input type="text"  placeholder="District" id="l3name" name="l3name" size="10">
+              <input type="text"  placeholder="State" id="l3name" name="l3name" size="20">
+
+              <br>
+              <br>
+
+              <label for="lname">PIN Code:</label><span class="my"> &#42;</span> <br>
+              <input type="text"  placeholder=" PIN " id="l1name" name="l1name" size="4" maxlength="4" >
+
+              <br>
+              <br>
+
+              <label for="lname">Primary Contact Number:</label><span class="my"> &#42;</span>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+              <label for="lname">Secondary Contact Number:</label><br>
+              <input type="text"  placeholder="10 digits Phone no. " id="l4name" name="l4name" size="12" >
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text"  placeholder="10 digits Phone no. " id="l4name" name="l4name" size="12" >
+
+              <br>
+              <br>
+              <label for="fname">E Mail:</label><span class="my"> &#42;</span> <br>
+              <input type="email" placeholder="Email" id="fname" name="fname" size="25">
+              <br>
+              <br>
+
+
+              <h5> Account Details and Identification Proof Section:</h5>
+              <br>
+              <label> Account Type: </label><span class="my"> &#42;</span> <br>
+              
+              <label for="15name">Saving Account</label>
+              <input type="checkbox"  required="true" placeholder="Saving Account" id="l5name" name="l5name" >
+              &nbsp;
+              <label for="15name">Current Account</label>
+              <input type="checkbox"  required="true" placeholder="Debit Account" id="l5name" name="l5name"  >
+
+              <br>
+              <br>
+              <label for="lname">PAN Card Number:</label><span class="my"> &#42;</span> <br>
+              <input type="text" required placeholder="PAN No. " id="l4name" name="l4name" size="12" >
+              <br>
+              <br>
+
+              <label for="lname">Identification Proof (Aadhar Card Number by UIADI):</label><br>
+              <input type="text" pattern="/d{16}"  placeholder="Aadhar Card Number" id="aadhname" name="l4name" size="40" >
+              <br>
+              <br>
+
+              <h5> Education Details Section:</h5>
+              <br>
+              <label for="fname">Education Level:</label>
+              <input type="text" placeholder="Education " id="fname" name="fname" autofocus >
+              <br>
+              <br>
+
+
+              <h5> Occupation Section:</h5>
+              <br>
+              <label for="fname">Occupation:</label><span class="my"> &#42;</span> <br>
+              <input type="text" placeholder="Ex. Businessman" id="fname" name="fname" autofocus >
+              <br>
+              <br>
+
+              <h5> E-Signature:</h5>
+              <br>
+              <label for="fname">Signature:</label><span class="my"> &#42;</span> <br>
+              <input type="" placeholder="Signature" id="fname" name="fname" autofocus >
+          
+            </div>
+            </form>
+            </div>
+            </div>
+
+            <br>
+        <!--Footer Section-->
+
+            <div class="mystyle">
+            <span class="my"> &#42;</span>
+            <input type="checkbox" form="new" required="true" placeholder="area" id="l5name" name="l5name" aria-required="true" >
+            
+            <label>I agree to the terms and condition<a href="#" rel="Home.html"> (Click Here know about T&C)</a></label>
+            <br>
+            <br>
+            <h5 > <span class="my">Note:</span> Area marked with (<span class="my">*</span>) are compulsory</h5>
+            <br>
+            </div>
+            <br>
+            <div class="d-grid">
+                <input type="submit" form="new" value="Click here to complete Registration" class="btn btn-primary btn-block">
+                </div>
+                <br>
+                <br>
+
+
+        
+    </body>
+</html>
